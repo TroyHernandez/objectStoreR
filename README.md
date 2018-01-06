@@ -59,7 +59,17 @@ These credentials can easily be obtained when using an R Jupyter Notebook in IBM
 Set your credentials list as described in the credentials section, pay attention to container and filename as this will tell the function what file to grab.  Currently the package only supports getting CSV files.  Since all the information needed is in the credentials list, the function call just passes this list and returns a dataframe object:
 
 ```
-creds <-list(auth_url = "https://identity.open.softlayer.com",project = "object_storage_92c67982_------",project_id = "7babac2c------------------",region = "dallas",user_id = "18aa------------------",domain_id = "2c------------------",domain_name =  "------",username = "admin_774cd5e------------------------",password = "i------------",container = "notebooks", filename = "yourfile.csv")
+creds <- list(auth_url = "https://identity.open.softlayer.com",
+              project = "object_storage_92c67982_------",
+              project_id = "7babac2c------------------",
+              region = "dallas",
+              user_id = "18aa------------------",
+              domain_id = "2c------------------",
+              domain_name =  "------",
+              username = "admin_774cd5e------------------------",
+              password = "i------------",
+              container = "notebooks",
+              filename = "yourfile.csv")
 
 df <- objectStore.get(creds)
 ```
@@ -69,7 +79,15 @@ df <- objectStore.get(creds)
 Set your credentials list as described in the credentials section.  You will still use a container to tell the function where to put the file, but the name of the file will be extracted from the file passed as the second argument to the function.  The example below shows saving a dataframe to CSV then calling the objectStore.put function passing the credentials list and the name of the file, the status of the request is returned from the function (201 = success):
 
 ```
-creds <-list(auth_url = "https://identity.open.softlayer.com",project = "object_storage_92c67982_------",project_id = "7babac2c------------------",region = "dallas",user_id = "18aa------------------",domain_id = "2c------------------",domain_name =  "------",username = "admin_774cd5e------------------------",password = "i------------",container = "notebooks")
+creds <- list(auth_url = "https://identity.open.softlayer.com",
+              project = "object_storage_92c67982_------",
+              project_id = "7babac2c------------------",
+              region = "dallas",user_id = "18aa------------------",
+              domain_id = "2c------------------",
+              domain_name =  "------",
+              username = "admin_774cd5e------------------------",
+              password = "i------------",
+              container = "notebooks")
 
 write.csv(df,'myCSVforGit.csv')
 status<- objectStore.put(creds,'myCSVforGit.csv')
