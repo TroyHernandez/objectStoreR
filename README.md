@@ -39,7 +39,17 @@ If you are using the Bluemix Object Storage service you probably have credential
 The problem with these credentials is that R doesn't like this format very much.  The following functions use credentials in this format:
 
 ```
-creds <-list(auth_url = "https://identity.open.softlayer.com",project = "object_storage_92c67982_------",project_id = "7babac2c------------------",region = "dallas",user_id = "18aa------------------",domain_id = "2c------------------",domain_name =  "------",username = "admin_774cd5e------------------------",password = "i------------",container = "notebooks", filename = "yourfile.csv")
+creds <- list(auth_url = "https://identity.open.softlayer.com",
+              project = "object_storage_92c67982_------",
+              project_id = "7babac2c------------------",
+              region = "dallas",
+              user_id = "18aa------------------",
+              domain_id = "2c------------------",
+              domain_name =  "------",
+              username = "admin_774cd5e------------------------",
+              password = "i------------",
+              container = "notebooks",
+              filename = "yourfile.csv")
 ```
 
 These credentials can easily be obtained when using an R Jupyter Notebook in IBM Data Science Experience. 
